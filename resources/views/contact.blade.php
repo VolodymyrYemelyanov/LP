@@ -5,7 +5,7 @@
 @section('content')
     <h1>Contact page</h1>
 
-<form action="{{ route('submit-form') }}" method="post">
+    <form action="{{ route('submit-form') }}" method="post">
         @csrf
 
         <div class="form-group">

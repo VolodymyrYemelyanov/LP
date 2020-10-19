@@ -20,8 +20,15 @@ class ContactController extends Controller {
     }
 
     public function allData() {
-        // dd(Contact::all());
-        return view('messages', ['data' => Contact::all()]);
+        $contact = new Contact;
+        // return view('messages', ['data' => $contact->orderBy('id', 'dsc')->skip(1)->take()->get()]);
+
+        return view('messages', ['data' => $contact->all()]);
+    }
+
+    public function showOneMessage($id) {
+        $contact = new Contact;
+        return view('one-message', ['data' => $contact->find($id)]);
     }
 
 }
